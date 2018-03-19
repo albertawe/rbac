@@ -19,3 +19,13 @@ Route::get('home', 'IndexController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Admin Interface Routes
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
+{
+  // Backpack\CRUD: Define the resources for the entities you want to CRUD.
+    CRUD::resource('tag', 'TagCrudController');
+    CRUD::resource('product', 'ProductCrudController');
+  // [...] other routes
+});

@@ -15,20 +15,21 @@ class PermissionSeeder extends Seeder
     {
               $roles=[
                 'admin',
-                'accountant',
-                'user'
+                'distributor',
+                'staff',
+                'dealer',
+                'directcustomer'
               ];
               $permissions=[
-                'dashboard'=>['admin','accountant','user'],
+                'dashboard'=>['admin',
+                  'distributor',
+                  'staff',
+                  'dealer',
+                  'directcustomer'],
                 'file-manager'=>['admin'],
-                'langfile-manager'=>['admin'],
-                'backup-manager'=>['admin'],
-                'log-manager'=>['admin'],
-                'settings'=>['admin'],
-                'page-manager'=>['admin'],
                 'permission-manager'=>['admin'],
-                'menu-crud'=>['admin'],
-                'news-crud '=>['admin'],
+                'product' => ['admin'],
+                'tags' => ['admin']
               ];
               //create roles
               foreach ($roles as $role) {

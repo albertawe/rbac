@@ -51,3 +51,15 @@ function () {
         Route::post('change-password', 'Auth\MyAccountController@postChangePasswordForm');
     }
 });
+
+Route::group([
+    'namespace' => 'Backpack\PermissionManager\app\Http\Controller',
+    'middleware' => ['web', 'admin','can:permission-manager'],
+    'prefix' => config('backpack.base.route_prefix', 'admin'),
+    ], function () {
+    CRUD::resource('permission', 'PermissionCrudController');
+    CRUD::resource('role', 'RoleCrudController');
+    CRUD::resource('user', 'UserCrudController');
+});
+
+
