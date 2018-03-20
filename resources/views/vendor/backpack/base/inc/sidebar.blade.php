@@ -27,7 +27,15 @@
           @can('products')
           <li><a href="{{ url('admin/product') }}"><i class="fa fa-database"></i> <span>Manage Products</span></a></li>
           @endcan
-          
+
+          @can('purchase')
+          <li><a href="{{ url('admin/purchase') }}"><i class="fa fa-money"></i> <span>Manage Purchases</span></a></li>
+          @endcan
+
+          @can('sale')
+          <li><a href="{{ url('admin/sale') }}"><i class="fa fa-money"></i> <span>Manage Sales</span></a></li>
+          @endcan
+
           @can('permission-manager')
           <li class="treeview">
             <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>
